@@ -9,5 +9,6 @@ Description: A simple extension of ggplot2 with labeled contour plot.
 License: MIT
 Depends: R (>= 2.14)
 Imports:
-  ggplot2 (> 1.0.1)
+  ggplot2 (> 1.0.1),
+  dplyr
 LazyData: TRUE

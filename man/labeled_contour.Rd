@@ -11,12 +11,12 @@
 StatContourLabel
 
 geom_contour_label(mapping = NULL, data = NULL, position = "identity",
-  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, digits = 1, ...)
+  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, digits = 3, ...)
 
 geom_labeled_contour(mapping = NULL, data = NULL, stat = "contour",
   position = "identity", lineend = "butt", linejoin = "round",
   linemitre = 1, na.rm = FALSE, show.legend = NA, inherit.aes = TRUE,
-  digits = 1, ...)
+  digits = 3, ...)
 }
 \arguments{
 \item{digits}{this parameter is passed to \code{signif()}, but usually this doesn't matter since

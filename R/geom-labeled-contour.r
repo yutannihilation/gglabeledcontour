@@ -28,7 +28,7 @@ StatContourLabel <- ggplot2::ggproto(
   "StatContourLabel",
   ggplot2::Stat,
   default_aes = aes(label = ..level..),
-  compute_group = function(..., digits = 1) {
+  compute_group = function(..., digits = 3) {
     ggplot2::StatContour$compute_group(...) %>%
       dplyr::group_by(level) %>%
       dplyr::summarise(x = nth(x, round(n() / 2)),
@@ -41,7 +41,7 @@ StatContourLabel <- ggplot2::ggproto(
 #' @export
 geom_contour_label <- function(mapping = NULL, data = NULL,
                                position = "identity", na.rm = FALSE, show.legend = NA,
-                               inherit.aes = TRUE, digits = 1, ...) {
+                               inherit.aes = TRUE, digits = 3, ...) {
   ggplot2::layer(
     data = data,
     mapping = mapping,
@@ -63,7 +63,7 @@ geom_contour_label <- function(mapping = NULL, data = NULL,
 geom_labeled_contour <-
   function(mapping = NULL, data = NULL, stat = "contour", position = "identity",
            lineend = "butt", linejoin = "round", linemitre = 1, na.rm = FALSE,
-           show.legend = NA, inherit.aes = TRUE, digits = 1, ...) {
+           show.legend = NA, inherit.aes = TRUE, digits = 3, ...) {
     list(
       ggplot2::geom_contour(
         mapping, data, stat, position,
